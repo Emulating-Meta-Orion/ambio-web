@@ -1,12 +1,5 @@
 import React from "react";
 
-import company1 from "../assets/company1.svg";
-import company2 from "../assets/company2.svg";
-import company3 from "../assets/company3.svg";
-import company4 from "../assets/company4.svg";
-import company5 from "../assets/company5.svg";
-import company6 from "../assets/company6.svg";
-import company7 from "../assets/company7.svg";
 
 export const Services = () => {
   const services = [
@@ -15,21 +8,21 @@ export const Services = () => {
       title: "AR & 3D Property Visualization",
       description:
         "Experience immersive virtual tours and walkthroughs of properties using cutting-edge AR and 3D technology.",
-      image: "/src/assets/icons/membership.svg",
+      image: "/assets/icons/membership.svg",
     },
     {
       id: 1,
       title: "Virtual Property Tours",
       description:
         "Explore properties from the comfort of your home with interactive virtual tours, allowing you to get a realistic sense of space and layout",
-      image: "./src/assets/icons/association.svg",
+      image: "/assets/icons/association.svg",
     },
     {
       id: 1,
       title: "Interior Design Visualization",
       description:
         "Visualize potential renovations or interior design changes using AR and 3D modeling to see how your dream space can come to life.",
-      image: "/src/assets/icons/group-club.svg",
+      image: "/assets/icons/group-club.svg",
     },
   ];
 
@@ -55,7 +48,7 @@ export const Services = () => {
           >
             <div>
               <div className="bg-[#d9dbe9] mb-4 h-14 w-14 mx-auto rounded-tl-3xl rounded-br-3xl">
-                <img className="-ml-5" src={service.image} alt="" />
+                <img  src={service.image} alt="" />
               </div>
               <h4 className="text-3xl font-bold text-white mb-2 px-2">
                 {service.title}

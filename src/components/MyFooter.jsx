@@ -1,104 +1,115 @@
-import React from "react";
-import logo from "../assets/Heaven Estate.gif";
-import {SiGmail} from "react-icons/si"
-import { Footer, TextInput } from "flowbite-react";
-import {
-  BsDribbble,
-  BsFacebook,
-  BsGithub,
-  BsInstagram,
-  BsTwitter,
-} from "react-icons/bs";
-import logo1 from '../assets/emoLogoCircular(1).png'
+import React, { useEffect, useRef, useState } from "react";
+import emailjs from "emailjs-com";
+import logo from "/assets/Heaven Estate.gif";
+import { SiGmail } from "react-icons/si";
+import { Footer, TextInput, Textarea, Button } from "flowbite-react";
+import { BsGithub } from "react-icons/bs";
+import logo1 from '/assets/emoLogoCircular(1).png';
+
+
 export const MyFooter = () => {
+  useEffect(() => {
+    emailjs.init("WV50wayA-xqvN8Ygk");
+  }, []);
+
+  const [nameFocused, setNameFocused] = useState(false);
+  const [emailFocused, setEmailFocused] = useState(false);
+  const [messageFocused, setMessageFocused] = useState(false);
+  const emailRef = useRef();
+  const nameRef = useRef();
+  const textRef = useRef();
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const serviceID = 'default_service';
+    const templateID = 'template_qcb1zis';
+
+    try {
+      await emailjs.send(serviceID, templateID, {
+        name: nameRef.current.value,
+        recipient: emailRef.current.value,
+        message: textRef.current.value
+      });
+      alert('Email sent successfully!');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Error sending email:', error);
+    }
+
+    setLoading(false);
+  };
+
   return (
-    <Footer className="px-4 lg:px-14 mx-auto bg-black py-16" style={{width:"100%"}}>
+    <Footer className="flex flex-col justify-center items-center px-4 lg:px-14 mx-auto bg-black py-16 mt-1" style={{ width: "100%" }}>
       <div className="w-full">
-        <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
-          <div className="space-y-10 mr-4">
-            <a
-              className="text-2xl font-semibold flex items-center space-x-3"
-              href="/"
-            >
-              <img
-                className="w-2xl inline-block items-center"
-                src={logo}
-                alt="Imagem do logo"
-              />
-              {/*<span className="text-white">Heaven Estate</span>*/}
+        <div className="grid w-full justify-around sm:flex sm:justify-between md:flex md:grid-cols-1">
+          <div className="space-y-10 2xl:mr-4">
+            <a className="text-2xl font-semibold flex items-center space-x-3" href="/">
+              <img className="w-2xl inline-block items-center" src={logo} alt="Imagem do logo" />
             </a>
-            <div className="text-white">
-              <p className="mb-1">Copyright © 2024 Heaven Estate</p>
-              <p>All rights reserved</p>
-            </div>
-            <div className="mt-4 flex space-x-6 sm:mt-0">
-                <img src={logo1} className="w-14 h-10"/>
-              <Footer.Icon href="#" icon={BsGithub} className="text-white" />
-              <SiGmail className="bg-white w-7 h-5" />
-            </div>
+            
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:mt-0 mt-6 sm:grid-cols-3 sm:gap-6">
-            <div>
-              <Footer.Title
-                title="Company"
-                className="text-white font-bold text-xl"
-              />
-              <Footer.LinkGroup col>
-                <Footer.Link href="#" className="text-neutralSilver">
-                  About us
-                </Footer.Link>
-                <Footer.Link href="#" className="text-neutralSilver">
-                  Blog
-                </Footer.Link>
-                <Footer.Link href="#" className="text-neutralSilver">
-                  Contact us
-                </Footer.Link>
-                <Footer.Link href="#" className="text-neutralSilver">
-                  Pricing
-                </Footer.Link>
-                <Footer.Link href="#" className="text-neutralSilver">
-                  Testimonials
-                </Footer.Link>
-              </Footer.LinkGroup>
-            </div>
-            <div>
-              <Footer.Title
-                title="Support"
-                className="text-white font-bold text-xl"
-              />
-              <Footer.LinkGroup col>
-                <Footer.Link href="#" className="text-neutralSilver">
-                  Help center
-                </Footer.Link>
-                <Footer.Link href="#" className="text-neutralSilver">
-                  Terms of service
-                </Footer.Link>
-                <Footer.Link href="#" className="text-neutralSilver">
-                  Legal
-                </Footer.Link>
-                <Footer.Link href="#" className="text-neutralSilver">
-                  Privacy policy
-                </Footer.Link>
-                <Footer.Link href="#" className="text-neutralSilver">
-                  Status
-                </Footer.Link>
-              </Footer.LinkGroup>
-            </div>
-            <div>
-              <Footer.Title
-                title="Stay up to date"
-                className="text-white font-bold text-xl"
-              />
-              <Footer.LinkGroup col>
+          <div className="grid md:grid-cols-1 sm:mt-6 ml-20 2xl:ml-0" style={{ width: "50%", marginTop: "1rem important!" }}>
+            <Footer.Title title="Contact Us" className="text-white 2xl:text-4xl mt-3" />
+            <form id="form" onSubmit={handleSubmit}>
+              <div className="my-2">
+                <label htmlFor="name" className="text-white 2xl:text-2xl">Your Name:</label>
                 <TextInput
-                  id="email1"
-                  type="email"
-                  placeholder="Your email address"
+                  id="name"
+                  type="text"
+                  name="name"
+                  ref={nameRef}
+                  placeholder="Your name"
+                  required
+                  className={`w-full  ${nameFocused ? 'bg-blue-300' : ''}`}
+                  onFocus={() => setNameFocused(true)}
+                  onBlur={() => setNameFocused(false)}
                 />
-              </Footer.LinkGroup>
+              </div>
+              <div className="my-2">
+                <label htmlFor="email" className="text-white  2xl:text-2xl">Your Email Address:</label>
+                <TextInput
+                  id="email"
+                  type="email"
+                  name="_replyto"
+                  placeholder="Your email address"
+                  required
+                  ref={emailRef}
+                  className={`2xl:w-full 2xl:h-10 ${emailFocused ? 'bg-blue-300' : ''}`}
+                  onFocus={() => setEmailFocused(true)}
+                  onBlur={() => setEmailFocused(false)}
+                />
+              </div>
+              <div className="my-2">
+                <label htmlFor="message" className="text-white 2xl:text-2xl">Your Message:</label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="Your message"
+                  required
+                  ref={textRef}
+                  className={`w-full ${messageFocused ? 'bg-blue-300' : ''}`}
+                  onFocus={() => setMessageFocused(true)}
+                  onBlur={() => setMessageFocused(false)}
+                />
+              </div>
+              <Button id="button" type="submit" className="bg-customBlue  text-black w-30 mt-4 py-1 rounded border-blue-400">{loading ? 'Sending...' : 'Send'}</Button>
+            </form>
+            <div className="text-white 2xl:ml-[-900px]">
+              <p className="mt-10 mb-2 ml-3">Copyright © 2024 EmoDev</p>
+              <p className="ml-6">All rights reserved</p>
             </div>
-          </div>
+            <div className="flex space-x-6 mt-6 sm:mt-0 ml-[25px] 2xl:ml-[-900px] 2xl:mt-[50px]">
+              <img src={logo1} className="w-14 h-8" alt="Logo" />
+              <Footer.Icon href="https://github.com/Emulating-Meta-Orion" icon={BsGithub} className="text-white w-7 h-5" />
+              <SiGmail className="bg-white w-12 h-8 ml-4" />
+            </div>
         </div>
+          </div>
+
       </div>
     </Footer>
   );

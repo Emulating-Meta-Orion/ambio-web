@@ -7,20 +7,20 @@ export const Blog = () => {
     {
       id: 1,
       title: "Creating Streamlined Safeguarding Processes with OneRen",
-      image: "/src/assets/blog1-removebg-preview.png",
+      image: "/assets/blog1-removebg-preview.png",
       link:'/model1',
     },
     {
       id: 2,
       title:
         "What are your safeguarding responsibilities and how can you manage them?",
-      image: "./../../src/assets/blog2-removebg-preview.png",
+      image: "/assets/blog2-removebg-preview.png",
       link:'/model2',
     },
     {
       id: 3,
       title: "Revamping the Membership Model with Triathlon Australia",
-      image: "../../src/assets/blog3-removebg-preview(1).png",
+      image: "/assets/blog3-removebg-preview(1).png",
       link:'/model3',
     },
   ];
@@ -31,9 +31,7 @@ export const Blog = () => {
         <h2 className="text-4xl text-blue-500 font-semibold mb-4">
         Experience a Demo Today
         </h2>
-        // eslint-disable-next-line react/jsx-no-comment-textnodes
         <p className="text-base text-white mb-8 md:w-3/4 mx-auto">
-        // eslint-disable-next-line react/no-unescaped-entities
         Discover the future of real estate with Heaven Estate's AR and 3D solutions. Schedule your personalized demo today to see how our technology enhances property exploration. Contact us now to experience AR and 3D in action.
         </p>
       </div>

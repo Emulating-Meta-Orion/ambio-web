@@ -2,9 +2,9 @@ import { Carousel } from "flowbite-react";
 import React from "react";
 import { BiLogoPlayStore } from "react-icons/bi";
 import { FaAppStoreIos } from "react-icons/fa";
-import banner1 from "../assets/Web1.png";
-import banner2 from "../assets/Web2(1).png";
-import banner3 from "../assets/Web3.png";
+import banner1 from "/assets/Web1.png";
+import banner2 from "/assets/Web2(1).png";
+import banner3 from "/assets/Web3.png";
 
 export const Home = () => {
   return (
@@ -16,7 +16,7 @@ export const Home = () => {
               <div className="md:w-1/2">
                 <img src={banner1} alt="" />
               </div>
-              <div className="md:w-1/2 flex flex-col items-center justify-center md:items-start " style={{marginLeft:"20rem"}}>
+              <div className="md:w-1/2 flex flex-col items-center justify-center md:items-start 2xl:ml-[20rem]">
                 <h1 className="home-h1 text-white">
                   Experience Real Estate in a  <br />{" "}
                   <span className="text-brandPrimary leading-snug">
@@ -41,7 +41,7 @@ export const Home = () => {
               <div className="md:w-1/2">
                 <img src={banner2} alt="" />
               </div>
-              <div className="md:w-1/2 flex flex-col items-center justify-center md:items-start" style={{marginLeft:"20rem"}}>
+              <div className="md:w-1/2 flex flex-col items-center justify-center md:items-start 2xl:ml-[20rem]" >
                 <h1 className="home-h1">
                    Transforming Estate Discovery <br />{" "}
                   <span className="text-brandPrimary leading-snug">
@@ -66,7 +66,7 @@ export const Home = () => {
               <div className="md:w-1/2">
                 <img src={banner3} alt="" />
               </div>
-              <div className="md:w-1/2 flex flex-col items-center justify-center md:items-start" style={{marginLeft:"15rem"}} >
+              <div className="md:w-1/2 flex flex-col items-center justify-center md:items-start 2xl:ml-[20rem]">
                 <h1 className="home-h1">
                 Unlock Property Potential with <br />{" "}
                   <span className="text-brandPrimary leading-snug">

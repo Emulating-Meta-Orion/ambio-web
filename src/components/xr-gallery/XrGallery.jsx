@@ -2,9 +2,9 @@ import { OrbitControls } from "@react-three/drei";
 import { useThree, useFrame } from "@react-three/fiber";
 import { Interactive, useHitTest, useXR } from "@react-three/xr";
 import { Fragment, useEffect, useRef, useState } from "react";
-import Model1 from '../../assets/Model/final'
-import Model2 from '../../assets/Model/victorian'
-import Model3 from '../../assets/Model/white_green'
+import Model1 from '../Model/final'
+import Model2 from '../Model/victorian'
+import Model3 from '../Model/white_green'
 
 import { useCharacterAnimations } from '../../contexts/ModelControl'
 import { useGesture } from '@use-gesture/react'

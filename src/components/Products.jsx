@@ -1,13 +1,6 @@
 import React from "react";
-import mobileImg from "../assets/mobile.jpg";
-import maecenas from "../assets/maecenas.png";
+import mobileImg from "/assets/mobile.jpg";
 
-import company1 from "../assets/company1.svg";
-import company2 from "../assets/company2.svg";
-import company3 from "../assets/company3.svg";
-import company4 from "../assets/company4.svg";
-import company5 from "../assets/company5.svg";
-import company6 from "../assets/company6.svg";
 
 export const Products = () => {
   return (
