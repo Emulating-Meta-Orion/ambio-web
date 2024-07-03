@@ -96,7 +96,7 @@ export const MyFooter = () => {
                   onBlur={() => setMessageFocused(false)}
                 />
               </div>
-              <Button id="button" type="submit" className="bg-customBlue  text-black w-30 mt-4 py-1 rounded border-blue-400">{loading ? 'Sending...' : 'Send'}</Button>
+              <Button id="button" type="submit" className="bg-white text-black w-30 mt-4 py-1 rounded border-blue-400">{loading ? 'Sending...' : 'Send'}</Button>
             </form>
             <div className="text-white 2xl:ml-[-900px]">
               <p className="mt-10 mb-2 ml-3">Copyright © 2024 EmoDev</p>
