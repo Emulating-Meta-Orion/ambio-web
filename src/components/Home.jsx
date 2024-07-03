@@ -74,9 +74,6 @@ export const Home = () => {
                   <button className="btn-primary">
                     <span className="flex">Download <BiLogoPlayStore size={'20px'} className="my-1" /></span>
                   </button>
-                  <button className="btn-primary">
-                    <span className="flex">Download <FaAppStoreIos size={'20px'} className="my-1" /></span>
-                  </button>
                 </div>
               </div>
             </div>
