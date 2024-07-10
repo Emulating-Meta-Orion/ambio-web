@@ -49,8 +49,8 @@ export const Home = () => {
                 Have you experience AR or 3D in real estate?
                 </p>
                 <div className="flex justify-center items-center gap-4">
-                  <button className="btn-primary">
-                    <span className="flex">Download <BiLogoPlayStore size={'20px'} className="my-1" /></span>
+                 <button className="btn-primary">
+                    <a href="https://drive.google.com/file/d/1a3T_tPR9lNTcQp8t-V3_xm_RJcLWc5ZG/view"><span className="flex">Download <BiLogoPlayStore size={'20px'} className="my-1" /></span></a>
                   </button>
                 </div>
               </div>
@@ -71,8 +71,8 @@ export const Home = () => {
                   Take a demo right now
                 </p>
                 <div className="flex justify-center items-center gap-4">
-                  <button className="btn-primary">
-                    <span className="flex">Download <BiLogoPlayStore size={'20px'} className="my-1" /></span>
+                <button className="btn-primary">
+                    <a href="https://drive.google.com/file/d/1a3T_tPR9lNTcQp8t-V3_xm_RJcLWc5ZG/view"><span className="flex">Download <BiLogoPlayStore size={'20px'} className="my-1" /></span></a>
                   </button>
                 </div>
               </div>
