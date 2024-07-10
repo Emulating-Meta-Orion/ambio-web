@@ -28,7 +28,7 @@ export const Home = () => {
                 </p>
                 <div className="flex justify-center items-center gap-4">
                   <button className="btn-primary">
-                    <span className="flex">Download <BiLogoPlayStore size={'20px'} className="my-1" /></span>
+                    <a href="https://github.com/Vansh17555555/heaven-state/edit/main/src/components/Home.jsx"><span className="flex">Download <BiLogoPlayStore size={'20px'} className="my-1" /></span></a>
                   </button>
                 </div>
               </div>
