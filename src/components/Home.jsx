@@ -28,7 +28,7 @@ export const Home = () => {
                 </p>
                 <div className="flex justify-center items-center gap-4">
                   <button className="btn-primary">
-                    <a href="https:https://drive.google.com/file/d/1XHI1IoC4TzIYn3DbLtZxSQOnqavgcDHX/view?usp=drivesdk"><span className="flex">Download <BiLogoPlayStore size={'20px'} className="my-1" /></span></a>
+                    <a href="https://drive.google.com/file/d/1YFZ3kyxZqnf2wAqszRwcB1bHwupAPmtz/view?usp=sharing"><span className="flex">Download <BiLogoPlayStore size={'20px'} className="my-1" /></span></a>
                   </button>
                 </div>
               </div>
