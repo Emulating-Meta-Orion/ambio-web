@@ -590,12 +590,15 @@ export default function AchievementsPage() {
               <div className="flex flex-wrap items-center justify-center gap-12 md:gap-20">
                 <div className="flex flex-col items-center">
                   <div className="relative h-24 w-48">
+                    <a href="https://www.mib.gov.in/" target="_blank" rel="noopener noreferrer">
+                    
                     <Image
                       src="/mib-logo.png"
                       alt="Ministry of Information and Broadcasting India"
                       fill
                       className="object-contain"
-                    />
+                      />
+                    </a>                
                   </div>
                 </div>
                 <div className="flex flex-col items-center">
